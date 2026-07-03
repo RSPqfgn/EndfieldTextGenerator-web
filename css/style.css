@@ -398,6 +398,17 @@ body {
   padding: 6px 0;
   margin-top: auto;
   transition: color 0.3s ease;
+  line-height: 1.6;
+}
+
+.copyright a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.copyright a:hover {
+  color: var(--accent);
 }
 
 /* ===== Right Panel ===== */
