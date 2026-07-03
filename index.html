@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>终末地白色大字生成器</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/icon.ico" type="image/x-icon">
+</head>
+<body class="theme-dark">
+  <div class="main-container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <!-- Canvas Settings -->
+      <div class="panel-section">
+        <h3>画布设置</h3>
+        <div class="form-row">
+          <label>背景图片:</label>
+          <div class="bg-row">
+            <input type="text" id="bg-path" readonly placeholder="选择背景图片...">
+            <button class="btn-small" id="bg-browse">浏览</button>
+            <button class="btn-small" id="bg-clear">清除</button>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>宽度:</label>
+          <input type="number" id="canvas-width" value="1920" min="1" max="10000">
+        </div>
+        <div class="form-row">
+          <label>高度:</label>
+          <input type="number" id="canvas-height" value="1080" min="1" max="10000">
+        </div>
+      </div>
+
+      <!-- Text Settings -->
+      <div class="panel-section">
+        <h3>文字设置</h3>
+        <div class="form-row">
+          <label>主标题:</label>
+          <input type="text" id="main-text" value="主标题">
+        </div>
+        <div class="form-row">
+          <label>第二行:</label>
+          <input type="text" id="second-line" placeholder="(可选)">
+        </div>
+        <label class="toggle-row">
+          <input type="checkbox" id="sub-text-enabled">
+          <span class="toggle-track"></span>
+          添加萨卡兹文副标题
+        </label>
+      </div>
+
+      <!-- Shadow Effect -->
+      <div class="panel-section">
+        <h3>底影效果</h3>
+        <label class="toggle-row">
+          <input type="checkbox" id="shadow-enabled">
+          <span class="toggle-track"></span>
+          启用底影
+        </label>
+        <div class="slider-row">
+          <label>不透明度:</label>
+          <input type="range" id="shadow-opacity" min="0" max="1" step="0.01" value="0.15" disabled>
+          <span class="slider-value" id="shadow-opacity-label">0.15</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="panel-section">
+        <div class="button-row">
+          <button class="btn-action btn-primary" id="btn-save">保存图片</button>
+          <button class="btn-action" id="btn-refresh">刷新</button>
+          <button class="btn-action" id="btn-reset">重置</button>
+        </div>
+      </div>
+
+      <div class="copyright">改版作者：RSPqfgn，原作者：刃下狼血</div>
+    </div>
+
+    <!-- Right Panel (Preview) -->
+    <div class="right-panel">
+      <div class="preview-frame">
+        <div class="preview-header">
+          <h3>预览</h3>
+          <div class="preview-header-actions">
+            <button class="theme-toggle-btn" id="btn-theme-toggle" title="切换深色/浅色主题">
+              <span id="theme-toggle-icon">☀️</span>
+            </button>
+          </div>
+        </div>
+        <div class="preview-wrapper" id="preview-wrapper">
+          <div class="checkerboard-bg"></div>
+          <canvas class="preview-canvas" id="preview-canvas"></canvas>
+          <div class="scale-label" id="scale-label">缩放: --%</div>
+          <div class="loading-text" id="loading-text" style="display:none">生成中...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/wubi.js"></script>
+  <script src="js/backend.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
